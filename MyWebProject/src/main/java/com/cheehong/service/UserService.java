@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.cheehong.domain.User;
 
+/**
+ * @author Chee-Hong Hsia
+ *	UserService interface.
+ */
 public interface UserService {
 
 	/**
