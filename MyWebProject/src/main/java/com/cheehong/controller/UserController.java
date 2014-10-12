@@ -20,7 +20,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = { "/", "index.html", "index.jsp" }, method = RequestMethod.GET)
     public String initiateCreateUserPage(ModelMap model) {
-		model.addAttribute("createUserForm", new User());
+		model.addAttribute("user", new User());
         return "createUser";
     }
 
@@ -32,7 +32,7 @@ public class UserController {
 	 * @return userOverview.jsp
 	 */
 	@RequestMapping(method = RequestMethod.POST)
-	public String createUser(@ModelAttribute("createUserForm") User user, BindingResult result, SessionStatus status) {
+	public String createUser(@ModelAttribute("user") User user, BindingResult result, SessionStatus status) {
 		return "userOverview";
 	}
 

@@ -12,7 +12,7 @@
 		Below is an example for how to submit form field values to a JSP and
 		print them.<br>
 	</p>
-	<form:form role="form"  method="post" commandName="createUserForm">
+	<form:form role="form"  method="post" commandName="user">
 		<table>
 			<tbody>
 				<tr>
