@@ -13,12 +13,24 @@ import com.cheehong.domain.User;
 @Controller
 public class UserController {
 	
+	/**
+	 * This method initiates the CreateUser page.
+	 * @param model
+	 * @return createUser.jsp
+	 */
 	@RequestMapping(value = { "/", "index.html", "index.jsp" }, method = RequestMethod.GET)
-    public String getCreateUserPage(ModelMap model) {
+    public String initiateCreateUserPage(ModelMap model) {
 		model.addAttribute("createUserForm", new User());
         return "createUser";
     }
 
+	/**
+	 * This method is responsible for the submit functionality of the CreateUser page.
+	 * @param user
+	 * @param result
+	 * @param status
+	 * @return userOverview.jsp
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public String createUser(@ModelAttribute("createUserForm") User user, BindingResult result, SessionStatus status) {
 		return "userOverview";
