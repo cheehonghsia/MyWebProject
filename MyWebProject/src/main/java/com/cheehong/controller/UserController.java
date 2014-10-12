@@ -18,7 +18,7 @@ public class UserController {
 	 * @param model
 	 * @return createUser.jsp
 	 */
-	@RequestMapping(value = { "/", "index.html", "index.jsp" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String initiateCreateUserPage(ModelMap model) {
 		model.addAttribute("user", new User());
         return "createUser";
