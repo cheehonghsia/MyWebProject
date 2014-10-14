@@ -1,5 +1,7 @@
 package com.cheehong.dao;
 
-public class UserDAO {
+public interface UserDAO {
+
+	public void create();
 
 }

@@ -3,8 +3,6 @@ package com.cheehong.domain;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  * Subclass of BankAccount. 
@@ -13,21 +11,9 @@ import javax.persistence.Id;
 
 @Entity
 @DiscriminatorValue("SAVINGSACCOUNT")
-public class SavingsAccoung extends BankAccount {
+public class SavingsAccount extends BankAccount {
 	
-	private long ID;
-	private double interest;
-
-	@Id 
-	@GeneratedValue 
-	@Column(name="ID") 
-	public long getID() {
-		return ID;
-	}
-
-	public void setID(long iD) {
-		ID = iD;
-	}
+	private double interest;		
 	
 	@Column(name="INTEREST") 
 	public double getInterest() {
