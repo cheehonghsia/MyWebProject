@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.test.context.ContextConfiguration;
 
 import com.cheehong.dao.UserDAO;
+import com.cheehong.domain.User;
 
 @ContextConfiguration(locations = { "classpath:/InMemoryDbTestBase-context.xml" })
 public class InMemorySetup {
@@ -27,6 +28,8 @@ public class InMemorySetup {
 	
 	@Resource(name = "userDAO")
 	protected UserDAO userDAO;
+	@Resource(name = "user")
+	protected User user;
 
 	@Before
 	public void setup() throws Exception {

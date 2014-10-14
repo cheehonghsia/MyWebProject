@@ -1,7 +1,9 @@
 package com.cheehong.dao;
 
+import com.cheehong.domain.User;
+
 public interface UserDAO {
 
-	public void create();
+	public void create(User user);
 
 }

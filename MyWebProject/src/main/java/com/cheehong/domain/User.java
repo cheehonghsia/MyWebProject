@@ -69,12 +69,16 @@ public class User {
 		this.city = city;
 	}
 	
-	@OneToMany(cascade={CascadeType.PERSIST}, fetch=FetchType.EAGER)
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="USER_ID")
 	public List<BankAccount> getBankaccounts() {
 		return bankaccounts;
 	}
 	public void setBankaccounts(List<BankAccount> bankaccounts) {
 		this.bankaccounts = bankaccounts;
+	}
+	@Override
+	public String toString() {
+		return "User [firstname=" + firstname + ", lastname=" + lastname + "]";
 	}
 }

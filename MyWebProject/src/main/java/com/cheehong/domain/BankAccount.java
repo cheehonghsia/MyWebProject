@@ -63,7 +63,7 @@ public abstract class BankAccount {
 		this.accountNumber = accountNumber;
 	}
 	
-	@OneToOne(cascade={CascadeType.PERSIST})
+	@OneToOne(cascade={CascadeType.ALL})
 	public User getUser() {
 		return user;
 	}
