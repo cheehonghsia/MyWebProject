@@ -13,22 +13,4 @@
 
 	<bean id="userDAO" class="com.cheehong.dao.UserDAOImpl" />
 	
-	<bean id="payAccount" class="com.cheehong.domain.PayAccount">
-		<property name="nameOfUser" value="john" />
-		<property name="amount" value="200" />
-		<property name="accountNumber" value="123456789" />
-		<property name="user" ref="user" />
-	</bean>
-	
-	<bean id="user" class="com.cheehong.domain.User">
-		<property name="firstname" value="john" />
-		<property name="lastname" value="doe" />
-		<property name="address" value="stationsplein" />
-		<property name="city" value="utrecht" />
-		<property name="bankaccounts">
-			<list value-type="listOfBankaccounts">
-				<ref bean="payAccount"/>
-			</list>
-		</property>
-	</bean>
 </beans>

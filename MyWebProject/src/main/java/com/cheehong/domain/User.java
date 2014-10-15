@@ -21,6 +21,7 @@ import javax.persistence.OneToMany;
 public class User {
 	
 	private long id;
+	private String BSN;
 	private String firstname;
 	private String lastname;
 	private String address;
@@ -77,8 +78,17 @@ public class User {
 	public void setBankaccounts(List<BankAccount> bankaccounts) {
 		this.bankaccounts = bankaccounts;
 	}
+	
 	@Override
 	public String toString() {
 		return "User [firstname=" + firstname + ", lastname=" + lastname + "]";
+	}
+	
+	@Column(name="BSN") 
+	public String getBSN() {
+		return BSN;
+	}
+	public void setBSN(String BSN) {
+		this.BSN = BSN;
 	}
 }

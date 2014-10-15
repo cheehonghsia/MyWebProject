@@ -2,8 +2,15 @@ package com.cheehong.dao;
 
 import com.cheehong.domain.User;
 
+/**
+ * @author Chee-Hong Hsia
+ * UserDAO interface.
+ *
+ */
 public interface UserDAO {
 
-	public void create(User user);
+	public void createUser(User user);
+	
+	public User getUserBy(String BSN);
 
 }
