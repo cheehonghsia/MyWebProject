@@ -23,6 +23,8 @@
 	    </table>
 	</c:if>	
 	
+	<a href="createUser">Back to create user page</a>
+	
 
 </body>
 </html>
