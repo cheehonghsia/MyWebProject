@@ -23,7 +23,7 @@ public interface UserService {
 	/**
 	 * Method for deleting a specific user.
 	 */
-	public void delete(long userID);
+	public void delete(String userID);
 
 	/**
 	 * Method for retrieving all users.

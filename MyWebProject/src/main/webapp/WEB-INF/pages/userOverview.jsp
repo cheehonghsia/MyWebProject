@@ -15,7 +15,10 @@
 	<c:if test="${not empty users}">
 	    <table>
 	        <c:forEach var="user" items="${users}">
-	        	<h4>${user.lastname}</h4>
+	        	<tr>
+	        		<td>${user.lastname}</td>
+	        		<td><a href="deleteUser?id=${user.id}">delete</a></td>
+	        	</tr>
 	        </c:forEach>
 	    </table>
 	</c:if>	

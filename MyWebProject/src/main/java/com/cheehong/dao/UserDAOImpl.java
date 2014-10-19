@@ -37,4 +37,9 @@ public class UserDAOImpl implements UserDAO {
 	public List<User> getAllUsers() {
 		return this.sessionFactory.getCurrentSession().createCriteria(User.class).list();
 	}
+
+	public void delete(String userID) {
+		String hql = "delete from User where id= :userID";
+		this.sessionFactory.getCurrentSession().createQuery(hql).setString("userID", userID).executeUpdate();
+	}
 }

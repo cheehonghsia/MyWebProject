@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.cheehong.domain.User;
@@ -58,5 +59,13 @@ public class UserController {
 		List<User> users = this.userService.getAllUsers();
 		model.addAttribute("users", users);
 		return "userOverview";
+	}
+	
+	@RequestMapping(value="/deleteUser")
+	public String deleteUser(@RequestParam String id) {
+		
+		this.userService.delete(id);
+		
+		return "redirect:userOverview";
 	}
 }
