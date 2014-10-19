@@ -10,6 +10,7 @@ import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.After;
 import org.junit.Before;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 
 import com.cheehong.dao.UserDAO;

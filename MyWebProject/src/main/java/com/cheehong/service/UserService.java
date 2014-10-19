@@ -13,7 +13,7 @@ public interface UserService {
 	/**
 	 * Method for creating a User.
 	 */
-	public void create();
+	public void create(User user);
 
 	/**
 	 * Method for modifying a specific user.

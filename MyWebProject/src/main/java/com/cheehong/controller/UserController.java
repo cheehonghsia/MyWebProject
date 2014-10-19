@@ -1,5 +1,6 @@
 package com.cheehong.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -9,9 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.cheehong.domain.User;
+import com.cheehong.service.UserService;
 
 @Controller
 public class UserController {
+	
+	@Autowired
+	private UserService userService;
 	
 	/**
 	 * This method initiates the CreateUser page.
@@ -33,6 +38,10 @@ public class UserController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public String createUser(@ModelAttribute("user") User user, BindingResult result, SessionStatus status) {
+		
+		//calling the UserService facade class that calls the UserDAO class for handling user creation.
+		this.userService.create(user);
+		
 		return "userOverview";
 	}
 
