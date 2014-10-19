@@ -33,8 +33,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.userDAO.getAllUsers();
 	}
 
 	public User getUser(long userID) {

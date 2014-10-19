@@ -1,5 +1,7 @@
 package com.cheehong.dao;
 
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -29,5 +31,10 @@ public class UserDAOImpl implements UserDAO {
 		Criteria criteria = this.sessionFactory.getCurrentSession().createCriteria(User.class);
 		criteria.add(Restrictions.eq("BSN", BSN));
 		return (User) criteria.uniqueResult();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<User> getAllUsers() {
+		return this.sessionFactory.getCurrentSession().createCriteria(User.class).list();
 	}
 }

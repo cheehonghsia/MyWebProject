@@ -16,6 +16,10 @@
 		<table>
 			<tbody>
 				<tr>
+					<td>BSN</td>
+					<td>:</td>
+					<td><form:input type="text" name="BSN" size="20" path="BSN" id="BSN"/></td>
+				<tr>
 					<td>Firstname</td>
 					<td>:</td>
 					<td><form:input type="text" name="firstname" size="20" path="firstname" id="firstname"/></td>

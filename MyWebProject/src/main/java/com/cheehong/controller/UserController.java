@@ -1,5 +1,7 @@
 package com.cheehong.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,7 +25,7 @@ public class UserController {
 	 * @param model
 	 * @return createUser.jsp
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/createUser", method = RequestMethod.GET)
     public String initiateCreateUserPage(ModelMap model) {
 		model.addAttribute("user", new User());
         return "createUser";
@@ -37,12 +39,24 @@ public class UserController {
 	 * @return userOverview.jsp
 	 */
 	@RequestMapping(method = RequestMethod.POST)
-	public String createUser(@ModelAttribute("user") User user, BindingResult result, SessionStatus status) {
+	public String retrieveOverviewUsers(@ModelAttribute("user") User user, BindingResult result, SessionStatus status) {
 		
 		//calling the UserService facade class that calls the UserDAO class for handling user creation.
 		this.userService.create(user);
 		
+		return "redirect:userOverview";
+	}
+	
+	/**
+	 * After the POST call from createUser.jsp this class triggers the DB and return all users in the Database.
+	 * @param model
+	 * @return userOverview
+	 */
+	@RequestMapping(value="/userOverview", method = RequestMethod.GET)
+	public String retrieveAllUsers(ModelMap model) {
+		
+		List<User> users = this.userService.getAllUsers();
+		model.addAttribute("users", users);
 		return "userOverview";
 	}
-
 }

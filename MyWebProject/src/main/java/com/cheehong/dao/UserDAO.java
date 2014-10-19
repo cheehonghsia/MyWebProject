@@ -1,5 +1,7 @@
 package com.cheehong.dao;
 
+import java.util.List;
+
 import com.cheehong.domain.User;
 
 /**
@@ -12,5 +14,7 @@ public interface UserDAO {
 	public void createUser(User user);
 	
 	public User getUserBy(String BSN);
+
+	public List<User> getAllUsers();
 
 }
