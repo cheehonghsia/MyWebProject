@@ -28,6 +28,16 @@ public class User {
 	private String city;
 	private List<BankAccount> bankaccounts;
 	
+	public User(){};
+	
+	public User(String BSN, String firstname, String lastname, String address, String city) {
+		this.BSN = BSN;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.address = address;
+		this.city = city;
+	}
+	
 	@Id 
 	@GeneratedValue 
 	@Column(name="ID") 

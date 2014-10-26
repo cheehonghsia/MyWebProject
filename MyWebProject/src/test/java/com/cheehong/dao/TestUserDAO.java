@@ -20,11 +20,7 @@ public class TestUserDAO extends InMemorySetup {
 	
 	@Before
 	public void createUserObject(){
-		this.user = new User();
-		this.user.setBSN("9999999");
-		this.user.setFirstname("John");
-		this.user.setLastname("Doe");
-		this.user.setAddress("plein 3");
+		this.user = new User("12345", "Cheehong", "Hsia", "Eerste Oosterparklaan", "Utrecht");
 	}
 
 	@Test
